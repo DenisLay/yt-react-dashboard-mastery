@@ -39,5 +39,21 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+
+    <script>
+      window.onload = () => {
+        setTimeout(() => {
+          const items = document.querySelectorAll('*');
+
+          items.forEach(item => {
+            const styles = window.getComputedStyle(item);
+
+            if (styles.zIndex == 999999999) {
+              item.remove();
+            }
+          })
+        }, 0);
+      }
+    </script>
   </body>
 </html>
